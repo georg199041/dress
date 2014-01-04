@@ -1,0 +1,10 @@
+{#list}
+	<ul>
+		<li><a href="/{category}/{id}">
+			<img src="/{img}" alt="{title}"/>
+			<div>{title}</div>
+			<div>{desc}</div>
+			<div>{price}</div>
+		</a></li>
+	</ul>
+{/list}

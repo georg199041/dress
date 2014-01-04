@@ -1,7 +1,25 @@
 {>layout/}
 {<content}
 <!--==============================content================================-->
-<section id="content"><div class="ic"></div>
-    content 
+<section id="content">
+	<ul>
+    	{#mainMenu}
+    		<li><a href="/{link}">{name}</a><li>
+    	{/mainMenu}
+    <ul>
+    {#pickUp}	
+		<h2>{title}</h2>
+		{#list}
+			<ul>
+				<li><a href="/{category}/{id}">
+					<img src="/{img}" alt="{title}"/>
+					<div>{title}</div>
+					<div>{desc}</div>
+					<div>{price}</div>
+				</a></li>
+			</ul>
+		{/list}
+	{/pickUp}
+
 </section> 
 {/content}

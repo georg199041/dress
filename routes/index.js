@@ -1,123 +1,136 @@
 exports.index = function(req, res){  
 	res.render('index', { 
-		title: 'Index main Page',
-		homes: [{
-			name: 'Homes for sale',
+		title: 'Dress интернет магазин',
+		mainMenu: [{
+			link: 'woman', name: 'женщина'
 		},{
-			name: 'Flats for sale'
-		}], 
-		menu: [ {link: '', name: 'Main'}, {link: 'buying', name: 'Buying'}, {link: 'selling', name: 'Selling'}, {link: 'renting', name: 'Renting'}, {link: 'finance', name: 'Finance'}, {link: 'contacts', name: 'Contacts'}]
-	});
-};
-
-exports.buying = function(req, res){  
-	res.render('buying', { 
-		title: 'Buying Page', 
-		menu: [{
-				link: '', name: 'Main'
-			},{
-				link: 'buying', name: 'Buying'
-			},{
-				link: 'selling', name: 'Selling'
-			},{
-				link: 'renting', name: 'Renting'
-			},{
-				link: 'finance', name: 'Finance'
-			},{
-				link: 'contacts', name: 'Contacts'
+			link: 'underwear', name: 'нижнее белье'
+		},{
+			link: 'man', name: 'мужчина'
+		},{
+			link: 'kid', name: 'ребенок'
+		},{
+			link: 'shoes', name: 'обувь и аксессуары'
+		},{
+			link: 'home', name: 'дом'
+		},{
+			link: 'sale', name: 'sale'
 		}],
-		whatsBuying: [{
-			id: 1,
-			date: '25.12.2013',
-			type: 'homes',
-			img: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQcRZZ_L6kDFffZE3_P_ZF6zIYfItoQ2h3IL9Lty2ZyhPELs2QmDw',
-			title: 'Куплю жилье даром',
-			desc: 'Кто возьмет билетов пачку тот получит водокачку!',
-			price: 20000,
-			currency: '$',
-			auction: true
+		headerMenu: [{
+			link: 'service', name: 'Сервис',
 		},{
-			id: 2,
-			date: '15.11.2013',
-			type: 'homes',
-			img: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQhOBWbS6_4fqn2zfQJYO7B1Z9Xd7UrorZMCMVjFHfn6EiKZhSa',
-			title: 'Купить жилье по скидке',
-			desc: 'Квартира бомба, заходи и живи!',
-			price: 20000,
-			currency: '$',
-			auction: true
+			link: 'order_blank', name: 'Бланк заказа',
 		},{
-			id: 3,
-			date: '01.10.2013',
-			type: 'homes',
-			img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT2g_VTiPEl1Yc_D-X4Q5UdbYjx6OrNHJwpDLDpU4y8TiLpzXqN7A',
-			title: 'Куплю жилье и маленькую тележку',
-			desc: 'Жилье Жилье кому Жилье',
-			price: 20000,
-			currency: '$',
-			auction: false
-		}]
+			link: 'Sending', name: 'Рассылка',
+		},{
+			link: 'my_profile', name: 'Мой профиль/Мои желания ',
+		}],
+		pickUp: {
+			title: 'Подбери что-нибудь для себя:',
+			list: [{
+				img: 'images/1.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'	
+			},{
+				img: 'images/2.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/3.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/4.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/5.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/5.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},]
+		},
+
 	});
 };
-
-exports.buyingItem = function(req, res){ 
-	var whatsBuying = [{
-			id: 1,
-			date: '25.12.2013',
-			type: 'homes',
-			img: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQcRZZ_L6kDFffZE3_P_ZF6zIYfItoQ2h3IL9Lty2ZyhPELs2QmDw',
-			title: 'Куплю жилье даром',
-			desc: 'Кто возьмет билетов пачку тот получит водокачку!',
-			price: 20000,
-			currency: '$',
-			auction: true
-		},{
-			id: 2,
-			date: '15.11.2013',
-			type: 'homes',
-			img: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQhOBWbS6_4fqn2zfQJYO7B1Z9Xd7UrorZMCMVjFHfn6EiKZhSa',
-			title: 'Купить жилье по скидке',
-			desc: 'Квартира бомба, заходи и живи!',
-			price: 20000,
-			currency: '$',
-			auction: true
-		},{
-			id: 3,
-			date: '01.10.2013',
-			type: 'homes',
-			img: 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT2g_VTiPEl1Yc_D-X4Q5UdbYjx6OrNHJwpDLDpU4y8TiLpzXqN7A',
-			title: 'Куплю жилье и маленькую тележку',
-			desc: 'Жилье Жилье кому Жилье',
-			price: 20000,
-			currency: '$',
-			auction: false
-		}]
-	for(var i=0;i<whatsBuying.length;i++) {
-		if (whatsBuying[i].id == req.params.id) {
-			res.render('buyingItem', { 
-				title: 'BuyingItem Page',
-				item: whatsBuying[i]
-			});
-		} else if ( i == whatsBuying.length-1 && whatsBuying[i].id != req.params.id) {
-			res.send('Sorry, but no item with id '+ req.params.id +' was found.');
-		}
-		
-	}	
-	
+exports.categoryList = function(req, res){  
+	res.render('category/index', { 
+		title: 'category',
+		list: [{
+				img: 'images/1.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'	
+			},{
+				img: 'images/2.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/3.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/4.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/5.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},{
+				img: 'images/5.jpg',
+				title: 'Платье',
+				desc: 'bpc bonprix collection',
+				price: '139 грн',
+				id: 1,
+				category: 'dresses'		
+			},]
+	});
+};	
+exports.categoryItem = function(req, res){  
+	res.render('category-item/index', { 
+		title: 'category-item',
+		id: req.params.id
+	});
 };
-
-exports.contacts = function(req, res){  
-	res.render('contacts', { title: 'Contacts Page', menu: [ {link: '', name: 'Main'}, {link: 'buying', name: 'Buying'}, {link: 'selling', name: 'Selling'}, {link: 'renting', name: 'Renting'}, {link: 'finance', name: 'Finance'}, {link: 'contacts', name: 'Contacts'}] });
-};
-
-exports.finance = function(req, res){  
-	res.render('finance', { title: 'Finance Page', menu: [ {link: '', name: 'Main'}, {link: 'buying', name: 'Buying'}, {link: 'selling', name: 'Selling'}, {link: 'renting', name: 'Renting'}, {link: 'finance', name: 'Finance'}, {link: 'contacts', name: 'Contacts'}] });
-};
-
-exports.renting = function(req, res){  
-	res.render('renting', { title: 'Renting Page', menu: [ {link: '', name: 'Main'}, {link: 'buying', name: 'Buying'}, {link: 'selling', name: 'Selling'}, {link: 'renting', name: 'Renting'}, {link: 'finance', name: 'Finance'}, {link: 'contacts', name: 'Contacts'}] });
-};
-
-exports.selling = function(req, res){  
-	res.render('selling', { title: 'Selling Page', menu: [ {link: '', name: 'Main'}, {link: 'buying', name: 'Buying'}, {link: 'selling', name: 'Selling'}, {link: 'renting', name: 'Renting'}, {link: 'finance', name: 'Finance'}, {link: 'contacts', name: 'Contacts'}] });
+exports.unAvailable = function(req, res){  
+	res.render('404', { 
+		title: 'This page is temporary unavailable',
+		img: 'images/404.jpg'
+	});
 };

@@ -1,4 +1,8 @@
 <!--==============================header=================================-->
 <header>
-    Header
+    <ul>
+    	{#headerMenu}
+    		<li><a href="/{link}">{name}</a></li>
+    	{/headerMenu}
+    </ul>
 </header>

@@ -27,6 +27,10 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/dresses', routes.categoryList);
+app.get('/dresses/:id', routes.categoryItem);
+
+app.get('/:404', routes.unAvailable);
 
 http.createServer(app).listen(8000, function(){
   console.log("Express server listening on port " + 8000);
