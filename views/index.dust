@@ -1,0 +1,7 @@
+{>layout/}
+{<content}
+<!--==============================content================================-->
+<section id="content"><div class="ic"></div>
+    content 
+</section> 
+{/content}
